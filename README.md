@@ -1,6 +1,6 @@
 # JobTracker
 
-A full-stack job application tracker to manage your hiring pipeline, from first application to offer.
+A full-stack job application tracker to manage hiring pipeline, from first application to offer.
 
 ## Demo
 
@@ -16,18 +16,20 @@ A full-stack job application tracker to manage your hiring pipeline, from first 
 
 ![Detail View](./media/view_example.png)
 
+---
+
 ## Tech Stack
 
 | Layer     | Technology                                      |
 |-----------|-------------------------------------------------|
-| Frontend  | React 18 + Vite, TypeScript (strict), React Router v6 |
+| Frontend  | React 18 + Vite, TypeScript, React Router v6    |
 | Styling   | Vanilla CSS with CSS custom properties          |
 | Forms     | React Hook Form + Zod validation                |
-| Backend   | Node.js + Express + TypeScript (strict)         |
+| Backend   | Node.js 24 + Express + TypeScript               |
 | Database  | PostgreSQL 16 with raw `pg` driver              |
 | API Style | REST                                            |
 | Testing   | Jest + ts-jest + Supertest                      |
-| DevOps    | Docker + docker-compose                         |
+| DevOps    | Docker + docker-compose (Dockerfiles included)  |
 
 ---
 
@@ -87,7 +89,7 @@ cd backend
 cp .env.example .env
 # Edit .env with your DATABASE_URL
 npm install
-npm run migrate      # runs schema migrations
+npm run migrate      
 npm run dev          # starts on http://localhost:4000
 ```
 
