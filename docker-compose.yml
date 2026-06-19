@@ -1,0 +1,57 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: jobtracker
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d jobtracker"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  migrate:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db:5432/jobtracker
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    entrypoint: ["node", "dist/db/migrate.js"]
+    command: []
+    restart: on-failure
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db:5432/jobtracker
+      PORT: 4000
+      NODE_ENV: production
+      CORS_ORIGIN: http://localhost:3000
+    ports:
+      - "4000:4000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    entrypoint: ["node", "dist/index.js"]
+    command: []
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:4000
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
