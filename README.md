@@ -4,15 +4,17 @@ A full-stack job application tracker to manage your hiring pipeline, from first 
 
 ## Demo
 
-![Watch demo video] (./media/demo.mp4)
+![Watch demo video](./media/demo.mp4)
 
-![Dashboard] (./media/detail.png)
+### Screenshots
 
-![Add Application] (./media/add.png)
+![Dashboard](./media/detail.png)
 
-![Filter by Status] (./media/filter.png)
+![Add Application](./media/add.png)
 
-![Detail View] (./media/view_example.png)
+![Filter by Status](./media/filter.png)
+
+![Detail View](./media/view_example.png)
 
 ## Tech Stack
 
