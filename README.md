@@ -202,8 +202,8 @@ CREATE TABLE applications (
   id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   company_name VARCHAR(255) NOT NULL,
   job_title    VARCHAR(255) NOT NULL,
-  job_type     job_type_enum NOT NULL,   -- Internship | Full-time | Part-time
-  status       status_enum NOT NULL DEFAULT 'Applied',  -- Applied | Interviewing | Offer | Rejected
+  job_type     job_type_enum NOT NULL,   
+  status       status_enum NOT NULL DEFAULT 'Applied',  
   applied_date DATE NOT NULL,
   notes        TEXT,
   created_at   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
@@ -222,21 +222,21 @@ An `AFTER UPDATE` trigger keeps `updated_at` current automatically.
 jobtracker/
 ├── backend/
 │   ├── src/
-│   │   ├── controllers/      # Route handlers
-│   │   ├── db/               # Pool, repository, migrations
-│   │   ├── middleware/        # Validators, error handler
-│   │   ├── routes/           # Express routers
-│   │   ├── types/            # Shared TypeScript types
-│   │   ├── app.ts            # Express app setup
-│   │   └── index.ts          # Server entry point
+│   │   ├── controllers/      
+│   │   ├── db/               
+│   │   ├── middleware/        
+│   │   ├── routes/           
+│   │   ├── types/            
+│   │   ├── app.ts            
+│   │   └── index.ts          
 │   ├── Dockerfile
 │   └── .env.example
 ├── frontend/
 │   ├── src/
-│   │   ├── api/              # Axios API client
-│   │   ├── components/       # Reusable UI components
-│   │   ├── pages/            # Route-level page components
-│   │   ├── types/            # Shared TypeScript types
+│   │   ├── api/              
+│   │   ├── components/       
+│   │   ├── pages/            
+│   │   ├── types/            
 │   │   └── App.tsx
 │   ├── Dockerfile
 │   ├── nginx.conf
