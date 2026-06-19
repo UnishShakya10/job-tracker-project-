@@ -4,7 +4,7 @@ A full-stack job application tracker to manage your hiring pipeline, from first 
 
 ## Demo
 
-![Watch demo video](./media/demo.mp4)
+[Watch demo video](https://youtu.be/PT-s5vWKB1o)
 
 ### Screenshots
 
