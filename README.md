@@ -1,12 +1,18 @@
 # JobTracker
 
-A full-stack job application tracker to manage your hiring pipeline — from first application to offer.
+A full-stack job application tracker to manage your hiring pipeline, from first application to offer.
 
 ## Demo
 
-> _Add a screenshot or Loom link here before submitting._
+![Watch demo video] (./media/demo.mp4)
 
----
+![Dashboard] (./media/detail.png)
+
+![Add Application] (./media/add.png)
+
+![Filter by Status] (./media/filter.png)
+
+![Detail View] (./media/view_example.png)
 
 ## Tech Stack
 
