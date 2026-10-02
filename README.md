@@ -56,8 +56,8 @@ A full-stack job application tracker for managing the hiring pipeline from appli
 ### Using Docker
 
 ```bash
-git clone https://github.com/sarinashakya/jobtracker.git
-cd jobtracker
+git clone https://github.com/UnishShakya10/job-tracker-project-.git
+cd job-tracker-project-
 docker compose up --build
 ```
 
@@ -123,4 +123,3 @@ jobtracker/
 │       └── App.tsx
 └── docker-compose.yml
 ```
-
