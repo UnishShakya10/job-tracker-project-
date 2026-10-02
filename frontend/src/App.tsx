@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Briefcase } from 'lucide-react';
 import ApplicationsPage from './pages/ApplicationsPage';
@@ -19,6 +19,20 @@ export default function App() {
           <Routes>
             <Route path="/" element={<ApplicationsPage />} />
             <Route path="/applications/:id" element={<ApplicationDetailPage />} />
+            <Route
+              path="*"
+              element={
+                <div className="page">
+                  <div className="empty-state">
+                    <h1 className="page-title">Page not found</h1>
+                    <p>The page you’re looking for doesn’t exist.</p>
+                    <Link to="/" className="btn btn-primary" style={{ marginTop: 16 }}>
+                      Go to applications
+                    </Link>
+                  </div>
+                </div>
+              }
+            />
           </Routes>
         </main>
       </div>
